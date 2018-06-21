@@ -1,17 +1,24 @@
 # autofun
 Auto start - stop fan for raspberry pi, node.js
 
-���İɣ�Ӣ��̫���ˡ�
+中文吧，英文太废了。
 
-��ݮ�ɼ��оƬ�¶�ʵ���Զ���ͣ���ȣ�
+树莓派检测芯片温度实现自动启停风扇！
 
-׼��������
-	1.�����ܣ������ܵ�200�������ϣ������߼̵����������飬̫���ˣ����ѿ����������������ϻ����ܿ����ţ�
-	2.���Ӻ÷��ȣ�gpio�˿�14��
-	3.��װNode.js 6����
-	4.�༭linux����ű������ӵ�/etc/init.d/��chkconfig add autofun
+准备工作：
 
-��ͣʵ�ֹ���:
-	1.��ȡCPU�¶� cat /sys/devices/virtual/thermal/thermal_zone0/temp
-	2.����¶��Ƿ����48. ����
-	3.����¶��Ƿ����40. ֹͣ
+	1.三极管（电流能到200毫安以上），或者继电器（不建议，太大了，又难看，三极管贴风扇上基本能看不着）
+	
+	2.焊接好风扇，gpio端口14。
+	
+	3.安装Node.js 6以上
+	
+	4.编辑linux服务脚本并添加到/etc/init.d/，chkconfig add autofun
+
+启停实现过程:
+
+	1.获取CPU温度 cat /sys/devices/virtual/thermal/thermal_zone0/temp
+	
+	2.检查温度是否高于48. 启动
+	
+	3.检查温度是否低于40. 停止
