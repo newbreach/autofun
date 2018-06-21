@@ -1,0 +1,27 @@
+#! /bin/sh 
+S_HOME=/home/work/autofun
+SVR_NAME=autofun
+case $1 in 
+    start)
+        echo "starting $SVR_NAME ..."
+        node $S_HOME/index.js > $S_HOME/logs.out&
+        ;;
+    stop)
+        echo "stopping $SVR_NAME ..."
+        ps -ef|grep $SVR_NAME* |grep -v grep |awk '{print $2}'  | sed -e "s/^/kill -9 /g" | sh - 
+        ;;
+    restart)
+        "$0" stop
+        sleep 3
+        "$0" start
+        ;;
+    status)
+        ps -ef|grep $SVR_NAME*
+        ;;
+    logs)
+        tail -f $S_HOME/logs.out
+        ;;
+    *)       
+        echo "Example: $SVR_NAME [start|stop|restart|status|logs]" ;;
+esac
+

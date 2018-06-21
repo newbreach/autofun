@@ -1,0 +1,14 @@
+{
+  "name": "autofun",
+  "version": "1.0.0",
+  "description": "auto FUN",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "qunpeng.li",
+  "license": "ISC",
+  "dependencies": {
+    "rpio": "^0.9.22"
+  }
+}
