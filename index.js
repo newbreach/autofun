@@ -3,7 +3,7 @@ CLOSE=rpio.HIGH,
 OPEN=rpio.LOW,
 currentStatus=CLOSE,
 max=48000,
-min=40000,
+min=36000,
 funPin=8;
 rpio.open(funPin, rpio.OUTPUT, currentStatus);
 
@@ -18,13 +18,13 @@ setInterval(function(){
     if(currentStatus===CLOSE && val>=max){
       currentStatus=OPEN;
       rpio.write(funPin,OPEN);
-      console.log(new Date(),'OPEN');
+      console.log(new Date().toLocaleString(),'OPEN');
       return;
     }
     if(currentStatus===OPEN && val<=min){
       currentStatus=CLOSE;
       rpio.write(funPin,CLOSE);
-      console.log(new Date(),'CLOSE');
+      console.log(new Date().toLocaleString(),'CLOSE');
       return;
     }
   });
