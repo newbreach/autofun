@@ -2,8 +2,8 @@ var rpio = require('rpio'),
 CLOSE=rpio.HIGH,
 OPEN=rpio.LOW,
 currentStatus=CLOSE,
-max=48000,
-min=36000,
+max=52000,
+min=40000,
 funPin=8;
 rpio.open(funPin, rpio.OUTPUT, currentStatus);
 
