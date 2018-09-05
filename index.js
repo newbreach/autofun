@@ -4,7 +4,7 @@ OPEN=rpio.LOW,
 currentStatus=CLOSE,
 max=48000,
 min=40000,
-funPin=8;
+funPin=16;
 rpio.open(funPin, rpio.OUTPUT, currentStatus);
 
 var exec = require('child_process').exec;
