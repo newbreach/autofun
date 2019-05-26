@@ -13,7 +13,7 @@ Auto start - stop fan for raspberry pi, node.js
 	
 	3.安装Node.js 6以上
 	
-	4.编辑linux服务脚本并添加到/etc/init.d/，chkconfig add autofun
+	4.编辑linux服务脚本并添加到/etc/init.d/， systemctl enable autofun，chkconfig --add autofun
 
 启停实现过程:
 
